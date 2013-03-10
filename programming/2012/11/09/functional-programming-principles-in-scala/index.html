@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Functional Programming Principles In Scala</title>
+    
+    <meta name="author" content="Demian Neidetcher">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/twitter/bootstrap/css/bootstrap.2.2.2.min.css" rel="stylesheet">
+    <link href="/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+
+    <!-- atom & rss feed -->
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+  </head>
+
+  <body>
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container-narrow">
+          <a class="brand" href="/">Demian Neidetcher</a>
+          <ul class="nav">
+            
+            
+            
+
+
+  
+    
+      
+      	
+      	<li><a href="/archive.html">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/categories.html">Categories</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/pages.html">Pages</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags.html">Tags</a></li>
+      	
+      
+    
+  
+
+
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-narrow">
+
+      <div class="content">
+        
+<div class="page-header">
+  <h1>Functional Programming Principles In Scala <small>summary of the course</small></h1>
+</div>
+
+<div class="row-fluid post-full">
+  <div class="span12">
+    <div class="date">
+      <span>09 November 2012</strong>
+    </div>
+    <div class="content">
+      <h1 id='functional_programming_principles_in_scala'>Functional Programming Principles in Scala</h1>
+
+<p>So here&#8217;s the deal, I was dreading the thought of doing another assignment in the Odersky Scala course on Coursera. I have other projects I want to move on to and man I&#8217;m not built for the academic side. Then they send out an email telling everyone the minimum number of points we need to complete the course. Alt-tab over to a Google Doc spreadsheet, do some quick math and presto, I have way more than enough points. So, I punted on the last assignment. Yep, I&#8217;m that guy, I wrapped up my CS degree with a D in post-calc stats to get the diploma. That&#8217;ll work. Besides my weak finish the course was awesome. If you&#8217;re in the Scala space and you are anything short of a wizard I don&#8217;t understand why you wouldn&#8217;t jump on the opportunity to get instruction from Martin Odersky himself.</p>
+
+<h4 id='the_course_the_focus_of_the_course_as_you_would_imagine_is_functional_programming_they_take_much_inspiration_from'>The Course The focus of the course, as you would imagine, is functional programming. They take much inspiration from</h4>
+
+<p><a href='https://mitpress.mit.edu/sicp/'>SICP</a>. I don&#8217;t know how much of it was SICP or Martin Odersky himself but the course laid out the proper motivation and revelation of information such that my brain was willing and able to accept it. This was a well thought out, professional course. 50,000 people signed up for the course. I don&#8217;t know how many people finished it. The course developers created an automated system that analyzed your code to make sure it passed their own tests along with some other code analysis. For example I had some code implemented that passed tests but it didn&#8217;t use the <em>groupBy</em> capability in collections. That was the point of the exercise so they dinged me. Fair enough, they&#8217;re checking lots of stuff.</p>
+
+<p>Because of the automated nature, the programming assignments have to structured in a particular way. They have to lead you down a path. They can&#8217;t just give you an assignment and a blank canvas. I think this is okay. But it&#8217;s a different approach to programming assignments and worth recognizing.</p>
+
+<h3 id='id36'>#</h3>
+
+<h4 id='to_those_that_come_after_here_are_some_things_i_recommend_to_someone_taking_the_course_when_it_is_offered_next'>To Those That Come After Here are some things I recommend to someone taking the course when it is offered next.</h4>
+
+<ul>
+<li>Get the SICP book and refer to it, it helped a few times. Odersky mentions it and I think it&#8217;s fair game to refer to it.</li>
+
+<li>I didn&#8217;t do any of the video quizes, I don&#8217;t think it hurt me.</li>
+
+<li>Leverage the Scala-IDE worksheet, dump code in there and play, I think it&#8217;s better than the REPL.</li>
+
+<li>The forums were sometimes (not very often) helpful.</li>
+
+<li>Submit early and often. You get great feedback. Some co-workers found that if you put print statements in your code you&#8217;ll see the output in the online feedback, this can give you some indications of the additional test scenarios they are using to evaluate your code.</li>
+</ul>
+
+<h4 id='the_cheating_9_coworkers_and_myself_have_our_own_skype_room_dedicated_to_the_course_no_one_wanted_to_cheat_we_all_wanted_to_get_a_lot_out_of_the_class_we_even_made_sure_that_no_one_gave_away'>The Cheating 9 co-workers and myself have our own Skype room dedicated to the course. No one wanted to cheat, we all wanted to get a lot out of the class. We even made sure that no one gave away</h4>
+
+<p><em>spoilers</em> before the projects were due. But we also knew that we would benefit greatly by looking at each others work when we were done with assignments. I actually learned some cool stuff and it was a great time for me to accept the information since I just got done spending hours trying to solve the same problem. So I was one of the guys that had his assignments up on <a href='https://github.com/'>github</a>. Then we get the email from the admins that we need to take it down. That&#8217;s all cool but they cited how we signed an agreement acknowledging we wouldn&#8217;t post our stuff or whatever. I wish you could see my face but let&#8217;s just say, <strong>no one fuckin reads EULAs</strong>. If you don&#8217;t already know that, especially if you&#8217;re in software I&#8217;m not sure what to say. So I took it down from <a href='https://github.com/'>github</a> and put it on a private repo on <a href='https://bitbucket.org/'>bitbucket</a>. If you don&#8217;t already know, you get free private git repos from <a href='https://bitbucket.org/'>bitbucket</a>, good stuff.</p>
+
+<h4 id='on_from_here_im_doing_things_out_of_order_here_but_im_going_to_go_through_the_scala_koans_from_here_just_to_loop_back_and_go_thru_the_basics_some_more_in_the_forums_the_course_administrators_say_they_plan_on_offering_additional_scala_classes_through_coursera_i_look_forward_to_seeing_what_they_offer'>On From Here I&#8217;m doing things out of order here but I&#8217;m going to go through the Scala Koans from here. Just to loop back and go thru the basics some more. In the forums the course administrators say they plan on offering additional Scala classes through Coursera. I look forward to seeing what they offer.</h4>
+    </div>
+
+  
+    <ul class="tag_box inline">
+      <li><i class="icon-folder-open"></i></li>
+      
+      
+
+
+  
+     
+    	<li><a href="/categories.html#programming-ref">
+    		programming <span>5</span>
+    	</a></li>
+    
+  
+
+
+    </ul>
+    
+
+  
+    <ul class="tag_box inline">
+      <li><i class="icon-tags"></i></li>
+      
+      
+
+
+  
+     
+    	<li><a href="/tags.html#scala-ref">scala <span>2</span></a></li>
+     
+    	<li><a href="/tags.html#fp-ref">fp <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#coursera-ref">coursera <span>1</span></a></li>
+    
+  
+
+
+
+    </ul>
+    
+
+    <hr>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/2012/10/31/stairway-to-scala" title="Stairway To Scala">&larr; Previous</a></li>
+      
+        <li><a href="/archive.html">Archive</a></li>
+      
+        <li class="next"><a href="/efficiency/2012/11/16/the-setup" title="The Setup">Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+    <hr>
+    
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'jekyllbootstrap'; // required: replace example with your forum shortname
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+  </div>
+</div>
+
+      </div>
+      <hr>
+      <footer>
+        <p>&copy; 2013 Demian Neidetcher
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
+
